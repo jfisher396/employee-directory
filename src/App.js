@@ -1,5 +1,5 @@
 import React from 'react';
-// import EmployeeTracker from "./components/EmployeeTracker";
+// import EmployeeDir from "./components/EmployeeDir";
 
 function App() {
   return <h1>Employee Directory</h1> ;
