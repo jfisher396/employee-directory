@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
-import Search from "./Search"
+import Search from "./Search";
 
 class EmployeeDir extends Component {
   state = {
