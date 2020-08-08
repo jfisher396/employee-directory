@@ -38,6 +38,7 @@ class EmployeeDir extends Component {
   render() {
     return (
       <>
+        <div className="container-fluid">
         <h1>Employee Directory</h1>
         <Search searchTerm={this.state.searchTerm} handleInputChange={this.handleInputChange} />
         <table className="table">
@@ -64,6 +65,7 @@ class EmployeeDir extends Component {
             })}
           </tbody>
         </table>
+        </div>
       </>
     );
   }
