@@ -15,7 +15,7 @@ class EmployeeDir extends Component {
   }
   loadData = () => {
     axios.get("https://randomuser.me/api/?nat=us&results=25").then((result) => {
-      console.log(result.data.results)
+      // console.log(result.data.results)
       this.setState({
         employees: [...result.data.results],
         filteredArr: [...result.data.results]
@@ -28,7 +28,6 @@ class EmployeeDir extends Component {
   handleInputChange = event => {
     const value = event.target.value;
     let found = this.state.employees.filter(user => user.name.last.toLowerCase().includes(value) || user.name.first.toLowerCase().includes(value))
-    console.log(found)
     this.setState({
       searchTerm:value,
       filteredArr: [...found]
@@ -37,7 +36,6 @@ class EmployeeDir extends Component {
   };
 
   render() {
-    console.log(this.state.searchTerm)
     return (
       <>
         <h1>Employee Directory</h1>
