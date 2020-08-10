@@ -36,6 +36,11 @@ class EmployeeDir extends Component {
   };
 
   render() {
+    const {employees, sortType} = this.state
+    const sorted = employees.sort((a,b) =>{
+      const isReversed = (sortType === 'asc') ? 1 :-1
+      return isReversed * a.name.localeCompare(b.name)
+    })
     return (
       <>
         <div className="container-fluid">
