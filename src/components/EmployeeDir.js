@@ -56,9 +56,6 @@ class EmployeeDir extends Component {
       return 0;
     });
     
-    console.log(ascSort);
-    console.log("==========");
-
     let descSort = [...this.state.filteredArr].sort((a, b) => {
       //a is less than b by some ordering criterion
       if (a.name.last.toLowerCase() > b.name.last.toLowerCase()) {
@@ -71,24 +68,15 @@ class EmployeeDir extends Component {
       // a must be equal to b
       return 0;
     });
-    console.log("desc sort");
-    console.log(descSort);
-    console.log("==========");
 
-
-    //now on click we are going to change the name of the sortType from asc to desc and vice versa, and based on that type will reassign the filtered array
+    //changes the name of the sortType from asc to desc and vice versa, and based on that type will reassign the filtered array
     if (this.state.sortType === "asc") {
       this.setState({ sortType: "desc", filteredArr: descSort }) //if the sortType is asc, turn it to desc and assign descSort to filtered array 
     } else {
       this.setState({ sortType: "asc", filteredArr: ascSort }) //vice versa
     }
-
   }
   
-
-
-
-
   //Takes the information from the API and renders it onto the page in table form.
   render() {
 
@@ -102,7 +90,7 @@ class EmployeeDir extends Component {
             <tr>
               <th scope="col">#</th>
               <th scope="col">Photo</th>
-              <th onClick={()=> { this.handleClickEvent()}} scope="col" >Name</th>
+                <th onClick={() => { this.handleClickEvent() }} scope="col" className={`${this.state.sortType === "asc" ? "stylesAsc" : "stylesDesc"} hover`}>Name</th>
               <th scope="col">Email</th>
               <th scope="col">Phone</th>
             </tr>
