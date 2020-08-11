@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from "axios";
 import Search from "./Search";
 
+//Creates the employee table component
 class EmployeeDir extends Component {
   state = {
     employees: [],
@@ -9,10 +10,11 @@ class EmployeeDir extends Component {
     filteredArr: [],
     sortType: "asc"
   }
-
+//Loads the data upon pageload
   componentDidMount() {
     this.loadData()
   }
+  //Makes the connection to the API server to retrieve 25 random results
   loadData = () => {
     axios.get("https://randomuser.me/api/?nat=us&results=25").then((result) => {
       // console.log(result.data.results)
@@ -21,10 +23,9 @@ class EmployeeDir extends Component {
         filteredArr: [...result.data.results]
       })
 
-    
     })
   }
-
+//Takes the input from the form and searches by first and last name based on letters entered
   handleInputChange = event => {
     const value = event.target.value;
     let found = this.state.employees.filter(user => user.name.last.toLowerCase().includes(value) || user.name.first.toLowerCase().includes(value))
@@ -34,13 +35,9 @@ class EmployeeDir extends Component {
     });
     
   };
-
+//Takes the information from the API and renders it onto the page in table form.
   render() {
-    const {employees, sortType} = this.state
-    const sorted = employees.sort((a,b) =>{
-      const isReversed = (sortType === 'asc') ? 1 :-1
-      return isReversed * a.name.localeCompare(b.name)
-    })
+
     return (
       <>
         <div className="container-fluid">
