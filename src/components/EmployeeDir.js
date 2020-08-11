@@ -40,8 +40,12 @@ class EmployeeDir extends Component {
     });
     
   };
-  
 
+  handleClickEvent = name => {
+    this.state.filteredArr.sort((a,b) => )
+
+  }
+  
   //Takes the information from the API and renders it onto the page in table form.
   render() {
 
@@ -55,7 +59,7 @@ class EmployeeDir extends Component {
             <tr>
               <th scope="col">#</th>
               <th scope="col">Photo</th>
-              <th scope="col">Name</th>
+              <th onClick={()=> { this.handleClickEvent("name")}} scope="col" >Name</th>
               <th scope="col">Email</th>
               <th scope="col">Phone</th>
             </tr>
