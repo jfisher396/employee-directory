@@ -14,6 +14,7 @@ class EmployeeDir extends Component {
   componentDidMount() {
     this.loadData()
   }
+
   //Makes the connection to the API server to retrieve 25 random results
   loadData = () => {
     axios.get("https://randomuser.me/api/?nat=us&results=25").then((result) => {
@@ -21,21 +22,27 @@ class EmployeeDir extends Component {
       this.setState({
         employees: [...result.data.results],
         filteredArr: [...result.data.results]
+        
       })
-
+      
     })
   }
-//Takes the input from the form and searches by first and last name based on letters entered
+  
+  //Takes the input from the form and searches by first and last name based on letters entered
   handleInputChange = event => {
+    
     const value = event.target.value;
     let found = this.state.employees.filter(user => user.name.last.toLowerCase().includes(value) || user.name.first.toLowerCase().includes(value))
+    console.log(found)
     this.setState({
       searchTerm:value,
       filteredArr: [...found]
     });
     
   };
-//Takes the information from the API and renders it onto the page in table form.
+  
+
+  //Takes the information from the API and renders it onto the page in table form.
   render() {
 
     return (
