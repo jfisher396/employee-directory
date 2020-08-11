@@ -40,32 +40,25 @@ class EmployeeDir extends Component {
     });
     
   };
-
+  //An event handler to sort employees by last name in alternating ascending and descending order.
   handleClickEvent = () => {
-    // this.state.filteredArr.sort((a,b) => )
     let ascSort = [...this.state.filteredArr].sort((a, b) => {
-      //a is less than b by some ordering criterion
       if (a.name.last.toLowerCase() < b.name.last.toLowerCase()) {
         return -1;
       }
-      //a is greater than b by the ordering criterion
       if (a.name.last.toLowerCase() > b.name.last.toLowerCase()) {
         return 1;
       }
-      // a must be equal to b
       return 0;
     });
     
     let descSort = [...this.state.filteredArr].sort((a, b) => {
-      //a is less than b by some ordering criterion
       if (a.name.last.toLowerCase() > b.name.last.toLowerCase()) {
         return -1;
       }
-      //a is greater than b by the ordering criterion
       if (a.name.last.toLowerCase() < b.name.last.toLowerCase()) {
         return 1;
       }
-      // a must be equal to b
       return 0;
     });
 
