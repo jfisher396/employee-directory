@@ -75,7 +75,7 @@ class EmployeeDir extends Component {
 
     return (
       <>
-        <div className="container-fluid">
+        <div className="container">
         <h1>Employee Directory</h1>
         <Search searchTerm={this.state.searchTerm} handleInputChange={this.handleInputChange} />
         <table className="table">
@@ -91,13 +91,13 @@ class EmployeeDir extends Component {
           <tbody>
             {this.state.filteredArr.map((employee, index) => {
               return (
-              <tr key={employee.email}>
-                
-                <td><img src={employee.picture.medium} alt={employee.name.first} /></td> 
-                <td>{employee.name.first} {employee.name.last}</td>
-                <td>{employee.email}</td>
-                <td>{employee.phone}</td>
-              </tr>
+                <tr key={employee.email}>
+                  <th scope="row">{index+1}</th> 
+                  <td><img src={employee.picture.medium} alt={employee.name.first} /></td> 
+                  <td>{employee.name.first} {employee.name.last}</td>
+                  <td>{employee.email}</td>
+                  <td>{employee.phone}</td>
+                </tr>
               )
             })}
           </tbody>
