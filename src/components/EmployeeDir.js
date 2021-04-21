@@ -80,7 +80,7 @@ class EmployeeDir extends Component {
             searchTerm={this.state.searchTerm}
             handleInputChange={this.handleInputChange}
           />
-          <table className="table table-striped">
+          <table className="table table-striped table-borderless">
             <thead>
               <tr>
                 <th scope="col">#</th>
