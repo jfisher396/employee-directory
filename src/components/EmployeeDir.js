@@ -29,15 +29,11 @@ class EmployeeDir extends Component {
   //Takes the input from the form and searches by first and last name based on letters entered
   handleInputChange = (event) => {
     const value = event.target.value;
-    let found = this.state.employees.filter(
-      (user) =>
-        user.name.last.toLowerCase().includes(value) ||
-        user.name.first.toLowerCase().includes(value)
-    );
-    console.log(found);
+    let searchResults = this.state.employees.filter((user) => user.name.last.toLowerCase().includes(value) || user.name.first.toLowerCase().includes(value));
+    
     this.setState({
       searchTerm: value,
-      filteredArr: [...found],
+      filteredArr: [...searchResults],
     });
   };
   //An event handler to sort employees by last name in alternating ascending and descending order.
