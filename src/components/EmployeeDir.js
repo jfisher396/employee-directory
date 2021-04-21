@@ -80,47 +80,50 @@ class EmployeeDir extends Component {
             searchTerm={this.state.searchTerm}
             handleInputChange={this.handleInputChange}
           />
-          <table className="table table-striped table-borderless">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Photo</th>
-                <th
-                  onClick={() => {
-                    this.handleClickEvent();
-                  }}
-                  scope="col"
-                  className={`${
-                    this.state.sortType === "asc" ? "stylesAsc" : "stylesDesc"
-                  } hover`}
-                >
-                  Name
-                </th>
-                <th scope="col">Email</th>
-                <th scope="col">Phone</th>
-              </tr>
-            </thead>
-            <tbody >
-              {this.state.filteredArr.map((employee, index) => {
-                return (
-                  <tr key={employee.email}>
-                    <th scope="row">{index + 1}</th>
-                    <td>
-                      <img
-                        src={employee.picture.medium}
-                        alt={employee.name.first}
-                      />
-                    </td>
-                    <td>
-                      {employee.name.first} {employee.name.last}
-                    </td>
-                    <td>{employee.email}</td>
-                    <td>{employee.phone}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+          <div className="table-responsive">
+            <table className="table table-striped table-borderless">
+              <caption>List of employees</caption>
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Photo</th>
+                  <th
+                    onClick={() => {
+                      this.handleClickEvent();
+                    }}
+                    scope="col"
+                    className={`${
+                      this.state.sortType === "asc" ? "stylesAsc" : "stylesDesc"
+                    } hover`}
+                  >
+                    Name
+                  </th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Phone</th>
+                </tr>
+              </thead>
+              <tbody >
+                {this.state.filteredArr.map((employee, index) => {
+                  return (
+                    <tr key={employee.email}>
+                      <th scope="row">{index + 1}</th>
+                      <td>
+                        <img
+                          src={employee.picture.medium}
+                          alt={employee.name.first}
+                        />
+                      </td>
+                      <td>
+                        {employee.name.first} {employee.name.last}
+                      </td>
+                      <td>{employee.email}</td>
+                      <td>{employee.phone}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
         </div>
       </>
     );
