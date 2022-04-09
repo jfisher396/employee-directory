@@ -1,7 +1,12 @@
 # Employee Directory
 
-A bootcamp assignment to create an Employee Directory with React.
+A bootcamp assignment to create an Employee Directory using React.
  
+<p>
+    <img src="https://img.shields.io/badge/-React-red" />
+    <img src="https://img.shields.io/badge/-Axios-yellow" />
+    <img src="https://img.shields.io/badge/-API-blue" />
+</p>
 
 [A deployed version can be viewed here.](https://polar-harbor-03343.herokuapp.com/)
 
@@ -16,7 +21,7 @@ A bootcamp assignment to create an Employee Directory with React.
 4. [License](#license)
 5. [Contributing](#contributing)
 
-### About
+## About
 
 * Employee Directory is an application for quickly viewing employee contact information.
 
@@ -26,21 +31,25 @@ A bootcamp assignment to create an Employee Directory with React.
 
 * Employees can be search for by first or last name.
 
-### User Story
+---
+
+## User Story
 
     AS A user, I want to be able to view my entire employee directory at once so that I have quick access to their information.
     
+---
 
-
-### Visuals:
-
+## Visuals:
 
 ![Screenshot of page](/media/employee-directory-1.png)
+---
 ![Screenshot of page](/media/employee-directory-2.png)
+---
 ![Screenshot of page](/media/employee-directory-3.png)
 
+---
 
-### Build
+## Build
 
 * In HTML, semantic tags have been used to aid with accessibility.
 * The site is built using a Bootstrap CSS framework.
@@ -55,14 +64,19 @@ To clone the repo:
 git clone git@github.com:jfisher396/employee-directory.git
 ``` 
 
-## Credits
+## Contact
 
-[James Fisher](https://github.com/jfisher396)
+* GitHub Username [jfisher396](https://github.com/jfisher396)
+* Email james@james-fisher-web-developer.com
+* <p>
+    <a href="https://www.linkedin.com/in/jamesfisher-webdev/"><img alt="Linkedin: James Fisher" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank" /></a>
+    </p>
+
+---
 
 ## License
 
-Built by [James Fisher](https://james-fisher-web-developer.herokuapp.com/).
-This application is released under [MIT](assets/LICENSE.txt) license.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Contributing
 
